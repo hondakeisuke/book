@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('book', 'BookController@index');
 Route::get('book/{id}', 'BookController@show');
 Route::get('book/{id}/edit', 'BookController@edit');
+Route::get('user', 'UserController@index');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
