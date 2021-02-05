@@ -16,12 +16,43 @@ class BookController extends Controller
 
   public function edit($id)
   {
-      $book = Book::findOrFail($id);
+      $book = Book::find($id);
       return view('book/edit', compact('book'));
   }
   public function show($id)
   {
+      $book = Book::find($id);
+      return redirect('book/{$id}', compact('book'));
+  }
+  public function create()
+  {
+      $book = new Book;
+      return view('book/create', compact('book'));
+  }
+
+  public function store(Request $request){
+      $book = new Book;
+      $book->title = $request->title;
+      $book->description = $request->description;
+      $book->author = $request->author;
+      $book->user_id = $request->user()->id;
+      $book->save();
+      return redirect('/');
+  }
+
+  public function update(Request $request, $id)
+  {
+      $book = Book::find($id);
+      $book->title = $request->title;
+      $book->description = $request->description;
+      $book->author = $request->author;
+      $book->save();
+      return redirect('/');
+  }
+  public function destroy($id)
+  {
       $book = Book::findOrFail($id);
-      return view('book/{$id}', compact('book'));
+      $book->delete();
+      return redirect('/');
   }
 }

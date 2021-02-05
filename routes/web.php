@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('book', 'BookController@index');
-Route::get('book/{id}', 'BookController@show');
-Route::get('book/{id}/edit', 'BookController@edit');
-Route::get('user', 'UserController@index');
+Route::get('/', 'BookController@index');
+// Route::resource('/', 'BookController',['only' => ['show','update','destory']]);
+Route::get('/{id}/edit', 'BookController@edit');
+Route::resource('book', 'BookController',['only' => ['create','store','show','update','destroy']]);
+// Route::get('book/{id}', 'BookController@destroy');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

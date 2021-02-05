@@ -16,21 +16,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        // $users = [
-        //     [
-        //         'name'          => '権正時昌',
-        //         'email'         => 'gonjouji@example.com',
-        //         'password'      => Hash::make('password'),
-        //     ],
-        //     [
-        //         'name'          => '源頼朝',
-        //         'email'         => 'minamoto@example.com',
-        //         'password'      => Hash::make('password'),
-        //     ],
-        // ];
-        //     foreach($users as $user){
-        //         \App\Models\User::create($user);
-        //     }
         User::factory(10)->create(); 
     }
 }

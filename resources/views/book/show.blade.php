@@ -6,19 +6,12 @@
 <div class="flex-direction: column">
   <div class="contener d-flex justify-content-around">
     <div class="text-box border">
-      <div class="text-header d-flex justify-content-between">
-        <div class="text-header-left d-flex justify-content-start">
-          <div class="icon ">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7jN5pjOL2v84vqdmzhEMUqjt9juliUvIx_g&usqp=CAU" alt="" class="rounded-circle img-fluid icon-img" width=80 height=60>
-          </div>
-          <div class="y-name">
-            <p>投稿者の名前</p>
-          </div>
+      <div class="text-header d-flex justify-content-start">
+        <div class="icon ">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7jN5pjOL2v84vqdmzhEMUqjt9juliUvIx_g&usqp=CAU" alt="" class="rounded-circle img-fluid icon-img" width=80 height=60>
         </div>
-        <div class="text-header-right d-flex justify-content-end" >
-          <form action="/{{ $book->id }}/edit" method="GET">
-            <button class="btn btn-primary btn-e"   role="button">編集</button>
-          </form>
+        <div class="y-name">
+          <p>{{ $book->name }}</p>
         </div>
       </div>
       <div class="text-body border-top">
@@ -45,6 +38,6 @@
     </div>
   </div>
 </div>
-@endforeach
 
+@endforeach
 @endsection
