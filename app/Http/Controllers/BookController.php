@@ -19,11 +19,7 @@ class BookController extends Controller
       $book = Book::find($id);
       return view('book/edit', compact('book'));
   }
-  public function show($id)
-  {
-      $book = Book::find($id);
-      return redirect('book/{$id}', compact('book'));
-  }
+
   public function create()
   {
       $book = new Book;
@@ -54,5 +50,14 @@ class BookController extends Controller
       $book = Book::find($id);
       $book->delete();
       return redirect('/');
+  }
+  public function search(Request $request)
+  {
+      $books = Book::where('title','like',"%{$request->search}%")
+               ->orWhere('description','like',"%{$request->search}%")
+               ->orWhere('author','like',"%{$request->search}%")->get();
+      
+      return view('book/index', compact('books'));
+
   }
 }
