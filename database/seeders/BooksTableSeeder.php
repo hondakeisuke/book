@@ -14,11 +14,15 @@ class BooksTableSeeder extends Seeder
     public function run()
     {
         $books = [
-            ['title' => 'test1',
-            'description' => 'test1 photo',
+            ['title' => '卒業',
+            'description' => '加賀恭一郎シリーズ第一作',
+            'author' => '東野圭吾',
+            'user_id' => '1',
             ],
-            ['title' => 'test2',
-            'description' => 'test2 photo',
+            ['title' => '空飛ぶ馬',
+            'description' => '落語家の師匠と女子大生のコンビが、日常のさりげない状況の中から、隠れた真実を探り出していく、北村薫のデビュー作',
+            'author' => '北村薫',
+            'user_id' => '2',
             ],
         ];
 
