@@ -49,6 +49,14 @@
     .text-header-right{
       padding-right:10px;
     }
+    .form-control{
+      height:40px;
+      width:300px;
+    }
+    .btn-info{
+      height:40px;
+      width:70px;
+    }
 
     
   </style>

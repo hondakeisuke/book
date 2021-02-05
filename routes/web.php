@@ -14,10 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'BookController@index');
-// Route::resource('/', 'BookController',['only' => ['show','update','destory']]);
 Route::get('/{id}/edit', 'BookController@edit');
-Route::resource('book', 'BookController',['only' => ['create','store','show','update','destroy']]);
-// Route::get('book/{id}', 'BookController@destroy');
+Route::resource('book', 'BookController',['only' => ['create','store','update','destroy',]]);
+Route::get('book/search','BookController@search')->name('book.search');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

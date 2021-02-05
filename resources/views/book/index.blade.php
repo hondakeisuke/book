@@ -1,6 +1,14 @@
 @extends('book/layout')
 @section('content')
 
+<h4 class="card-title">検索フォーム</h4>
+<div>
+  <form action="{{ url('book/search') }}" method="get" class="d-flex justify-content-start">
+    {{ csrf_field() }}
+    <input type="text" class="form-control input-lg" name="search" value="">
+    <button class="btn btn-primary" type="submit">検索</button>
+  </form>
+</div>
 
 @foreach($books as $book)
 <div class="flex-direction: column">
