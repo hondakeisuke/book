@@ -17,7 +17,12 @@
         </div>
         <div class="text-header-right d-flex justify-content-end" >
           <form action="/{{ $book->id }}/edit" method="GET">
-            <button class="btn btn-primary btn-e"   role="button">編集</button>
+            <button class="btn btn-primary btn-e">編集</button>
+          </form>
+          <form style="display:inline" action="book/{{ $book->id }}" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-primary btn-e" >削除</button>
           </form>
         </div>
       </div>
