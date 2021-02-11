@@ -20,7 +20,7 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7jN5pjOL2v84vqdmzhEMUqjt9juliUvIx_g&usqp=CAU" alt="" class="rounded-circle img-fluid icon-img" width=80 height=60>
           </div>
           <div class="y-name">
-            <p>投稿者の名前</p>
+            <p>{{$book->user->name}}</p>
           </div>
         </div>
         <div class="text-header-right d-flex justify-content-end" >

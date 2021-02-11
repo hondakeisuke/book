@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     use HasFactory;
+    
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
+    public function getData(){
+        return $this->id . ':' . $this->name . '(' . $this->user->name . ')';
+    }
+
+
 }
