@@ -23,16 +23,18 @@
             <p>{{$book->user->name}}</p>
           </div>
         </div>
-        <div class="text-header-right d-flex justify-content-end" >
-          <form action="/{{ $book->id }}/edit" method="GET">
-            <button class="btn btn-primary btn-e">編集</button>
-          </form>
-          <form style="display:inline" action="book/{{ $book->id }}" method="post">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-primary btn-e" >削除</button>
-          </form>
-        </div>
+        @if (Auth::id() == $book->user_id)
+          <div class="text-header-right d-flex justify-content-end" >
+            <form action="/{{ $book->id }}/edit" method="GET">
+              <button class="btn btn-primary btn-e">編集</button>
+            </form>
+            <form style="display:inline" action="book/{{ $book->id }}" method="post">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-primary btn-e" >削除</button>
+            </form>
+          </div>
+        @endif
       </div>
       <div class="text-body border-top">
         <div class="description-box">
